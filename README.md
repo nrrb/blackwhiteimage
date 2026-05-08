@@ -39,6 +39,8 @@ Given an input file `photo.png`, three files are always written:
 
 Input:
 
+**`oh fuck nicholas.png`** — original
+
 ![oh fuck nicholas.png](oh%20fuck%20nicholas.png)
 
 ```bash
@@ -47,8 +49,16 @@ python bw_convert.py "oh fuck nicholas.png" 55
 
 Output:
 
+*threshold=55*
+
 ![oh fuck nicholas_bw.png](oh%20fuck%20nicholas_bw.png)
+
+*threshold=55, white→transparent*
+
 ![oh fuck nicholas_bw_transparent.png](oh%20fuck%20nicholas_bw_transparent.png)
+
+*threshold=55, inverted, black→transparent*
+
 ![oh fuck nicholas_bw_inverted.png](oh%20fuck%20nicholas_bw_inverted.png)
 
 ---
@@ -78,6 +88,8 @@ Finds dominant colors in an image using k-means clustering, or masks all pixels 
 
 **Analyze dominant colors in `oh_fuck_hat.png`:**
 
+**`oh_fuck_hat.png`** — original
+
 ![oh_fuck_hat.png](oh_fuck_hat.png)
 
 ```bash
@@ -91,6 +103,8 @@ python color_cluster.py oh_fuck_hat.png --colors 5
 python color_cluster.py oh_fuck_hat.png --keep 10A6D5 --fuzz 30
 ```
 
+*--keep #10A6D5 --fuzz 30*
+
 ![oh_fuck_hat_structural-blue_30.png](oh_fuck_hat_structural-blue_30.png)
 
 **Produce `oh_fuck_hat_structural-blue_60.png`** (medium isolation, fuzz=60):
@@ -99,6 +113,8 @@ python color_cluster.py oh_fuck_hat.png --keep 10A6D5 --fuzz 30
 python color_cluster.py oh_fuck_hat.png --keep 10A6D5 --fuzz 60
 ```
 
+*--keep #10A6D5 --fuzz 60*
+
 ![oh_fuck_hat_structural-blue_60.png](oh_fuck_hat_structural-blue_60.png)
 
 **Produce `oh_fuck_hat_structural-blue_90.png`** (loose isolation, fuzz=90):
@@ -106,6 +122,8 @@ python color_cluster.py oh_fuck_hat.png --keep 10A6D5 --fuzz 60
 ```bash
 python color_cluster.py oh_fuck_hat.png --keep 10A6D5 --fuzz 90
 ```
+
+*--keep #10A6D5 --fuzz 90*
 
 ![oh_fuck_hat_structural-blue_90.png](oh_fuck_hat_structural-blue_90.png)
 
